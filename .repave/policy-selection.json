@@ -1,0 +1,25 @@
+{
+  "profile": "checkov-full",
+  "pack_source": "repave-checkov-pack",
+  "enabled_rules": [
+    "checkov:CKV2_REPAVE_1",
+    "checkov:CKV2_REPAVE_10",
+    "checkov:CKV2_REPAVE_11",
+    "checkov:CKV2_REPAVE_12",
+    "checkov:CKV2_REPAVE_13",
+    "checkov:CKV2_REPAVE_2",
+    "checkov:CKV2_REPAVE_3",
+    "checkov:CKV2_REPAVE_4",
+    "checkov:CKV2_REPAVE_5",
+    "checkov:CKV2_REPAVE_6",
+    "checkov:CKV2_REPAVE_7",
+    "checkov:CKV2_REPAVE_8",
+    "checkov:CKV2_REPAVE_9"
+  ],
+  "checkov_skip_checks": [],
+  "opa_rego_files": [],
+  "azure_definition_files": [],
+  "pack_versions": {
+    "checkov": "1.2.0"
+  }
+}

@@ -1,0 +1,12 @@
+metadata:
+  id: "CKV2_REPAVE_1"
+  name: "Terraform required_version must be declared"
+  category: "CONVENTION"
+  guideline: "Pin Terraform with a bounded required_version constraint in versions.tf."
+
+definition:
+  cond_type: attribute
+  resource_types:
+    - terraform
+  attribute: required_version
+  operator: exists

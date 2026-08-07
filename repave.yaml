@@ -1,0 +1,62 @@
+---
+apiVersion: repave.dev/v1beta1
+kind: GoldenPathArtifact
+metadata:
+  name: baseline
+spec:
+  artifactType: checkov-policy
+  checkovPolicy:
+    policy_name: baseline
+    organization: platform
+  checkov:
+    policies_source: policy/checkov/policies
+    policy_version: 1.2.0
+  governance:
+    baseline_source: standards/policy/governance-baseline.md
+    baseline_version: 1.0.0
+  blueprint:
+    name: checkov-policy-generic
+    version: 0.3.0
+  standard:
+    source: standards/policy/checkov.md
+    version: 1.0.0
+  generation:
+    engine_version: 2.34.0
+    generated_at: '2026-08-07T04:52:46+00:00'
+  policy:
+    profile: checkov-full
+    pack_source: repave-checkov-pack
+    enabled_rules:
+      - checkov:CKV2_REPAVE_1
+      - checkov:CKV2_REPAVE_10
+      - checkov:CKV2_REPAVE_11
+      - checkov:CKV2_REPAVE_12
+      - checkov:CKV2_REPAVE_13
+      - checkov:CKV2_REPAVE_2
+      - checkov:CKV2_REPAVE_3
+      - checkov:CKV2_REPAVE_4
+      - checkov:CKV2_REPAVE_5
+      - checkov:CKV2_REPAVE_6
+      - checkov:CKV2_REPAVE_7
+      - checkov:CKV2_REPAVE_8
+      - checkov:CKV2_REPAVE_9
+    pack_versions:
+      checkov: 1.2.0
+  ci:
+    workflow: .github/workflows/repave-gates.yml
+    toolchain:
+      terraform: 1.9.8
+      tflint: 0.55.1
+      checkov: checkov==3.2.366
+    gate_config:
+      checkov:
+        external_checks_dir: policy/checkov
+        config_file: .checkov.yml
+        scan_dir: tests/fixtures/pass
+        skip_checks: []
+        soft_fail: false
+    gates:
+      - checkov
+      - secrets
+      - docs-drift
+      - provenance-drift

@@ -1,0 +1,13 @@
+metadata:
+  id: "CKV2_REPAVE_2"
+  name: "Terraform required_version must cap below 2.x"
+  category: "CONVENTION"
+  guideline: "Use an upper bound on Terraform core (for example < 2.0.0) in required_version."
+
+definition:
+  cond_type: attribute
+  resource_types:
+    - terraform
+  attribute: required_version
+  operator: contains
+  value: "< 2.0.0"
