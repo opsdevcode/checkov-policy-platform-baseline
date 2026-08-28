@@ -7,9 +7,9 @@ Checkov custom policy baseline for Terraform estates.
 > `repave.yaml` provenance record pinning blueprint, standard, and engine version —
 > was emitted in a single run from a short form, not written by hand.
 >
-> repave is the intelligent platform layer: describe the golden path once and it
-> produces the repo your platform team would have hand-rolled, with policy enforced
-> from the first commit.
+> repave is **platform engineering as a service**: describe the golden path once and
+> it produces the repo a platform team would have hand-rolled, with policy enforced
+> from the first commit. The platform team you do not have to hire.
 >
 > **[Join the waitlist](https://repave.opsdevco.de/waitlist)** to generate your own.
 
